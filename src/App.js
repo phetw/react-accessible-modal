@@ -1,28 +1,39 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment, memo } from 'react'
+import Modal from './components/Modal'
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
+const App = memo(() => {
+  const modalContent = (
+    <Fragment>
+      <h1>Modal</h1>
+      <p>
+        Nunc semper eu lectus ac blandit. Fusce iaculis dolor sit amet felis placerat, non auctor nibh pellentesque. Nunc dignissim, tortor eget sollicitudin
+        pulvinar, sem est sagittis nisi, non condimentum orci felis vel libero. Aenean <a href="#3">third link</a> a tempus lorem. Proin a enim id magna
+        malesuada consectetur mattis eget massa. Sed volutpat neque vitae tortor.
+      </p>
+    </Fragment>
+  )
+  const modalProps = {
+    triggerText: 'Open Modal',
   }
-}
 
-export default App;
+  return (
+    <main className="content">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sagittis erat ut ex bibendum consequat. Morbi luctus ex ex, at varius purus vehicula
+        consectetur. Curabitur a sapien a augue consequat rhoncus. Suspendisse commodo ullamcorper nibh quis blandit. Etiam viverra neque quis mauris efficitur,
+        lobortis aliquam ex pharetra. Nam et ante ex. Sed gravida gravida ligula, non blandit nunc. Orci varius natoque penatibus et magnis dis parturient
+        montes, nascetur ridiculus mus. Integer consectetur efficitur tempor. Nunc sollicitudin felis congue facilisis faucibus. Mauris faucibus sit amet ante
+        eleifend dapibus.
+      </p>
+      <p>
+        Nunc semper eu lectus ac blandit. <Modal {...modalProps}>{modalContent}</Modal> Fusce iaculis dolor sit amet felis placerat, non auctor nibh
+        pellentesque. Nunc dignissim, tortor eget sollicitudin pulvinar, sem est sagittis nisi, non condimentum orci felis vel libero. Aenean a tempus lorem.
+        Proin a enim id magna malesuada consectetur mattis eget massa. Sed volutpat neque vitae tortor dignissim dapibus. Ut a ante maximus, sollicitudin nisi
+        ut, varius magna. Vestibulum maximus urna eget commodo egestas. Donec sollicitudin tortor ac mauris pulvinar, ac maximus urna tempus. Mauris non libero
+        posuere, ullamcorper neque vel, tempor sem. Suspendisse potenti. In tristique et metus id laoreet.
+      </p>
+    </main>
+  )
+})
+
+export default App
