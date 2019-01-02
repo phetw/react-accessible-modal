@@ -1,8 +1,9 @@
-import React, { Component, Fragment } from 'react'
+import React, { PureComponent, Fragment } from 'react'
+
 import ModalTrigger from './ModalTrigger'
 import ModalContent from './ModalContent'
 
-class Modal extends Component {
+class Modal extends PureComponent {
   state = { isOpen: false }
 
   onOpen = () => {
